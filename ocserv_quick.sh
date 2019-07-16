@@ -4,5 +4,5 @@ sudo -i
 yum install wget -y 
 wget https://raw.githubusercontent.com/codescope/ocserv/master/install_script.sh
 chmod +x install_script.sh 
-bash ./install_script.sh
+sh ./install_script.sh
 #
