@@ -126,15 +126,15 @@ certtool --generate-crl --load-ca-privkey ca-key.pem \
 #Configuring ocserv
 cd /etc/ocserv/
 rm -rf ocserv.conf
-wget https://raw.githubusercontent.com/chendong12/ocserv/master/ocserv.conf
+wget https://raw.githubusercontent.com/codescope/ocserv/master/ocserv.conf
 #
 cd /root/anyconnect
-wget https://raw.githubusercontent.com/chendong12/ocserv/master/gen-client-cert.sh
-wget https://raw.githubusercontent.com/chendong12/ocserv/master/user_add.sh
-wget https://raw.githubusercontent.com/chendong12/ocserv/master/user_del.sh
+wget https://raw.githubusercontent.com/codescope/ocserv/master/gen-client-cert.sh
+wget https://raw.githubusercontent.com/codescope/ocserv/master/add_user.sh
+wget https://raw.githubusercontent.com/codescope/ocserv/master/del_user.sh
 chmod +x gen-client-cert.sh
-chmod +x user_add.sh
-chmod +x user_del.sh
+chmod +x add_user.sh
+chmod +x del_user.sh
 }
 centos3_iptables(){
 echo 1 > /proc/sys/net/ipv4/ip_forward
