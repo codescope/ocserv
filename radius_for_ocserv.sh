@@ -42,6 +42,7 @@ function set_freeradius3(){
     sed -i "/ipv4addr = */s/^#//" /etc/raddb/clients.conf
 	#查找到字符串，去掉首字母为的注释#
 	sed -i '/read_clients = yes/s/^#//' /etc/raddb/mods-available/sql
+    sed -i '/read_groups = yes/s/^#//' /etc/raddb/mods-available/sql
 	sed -i '/dialect = "sqlite"/s/^#//' /etc/raddb/mods-available/sql
 	sed -i 's/dialect = "sqlite"/dialect = "mysql"/g' /etc/raddb/mods-available/sql	
 	sed -i '/server = "localhost"/s/^#//' /etc/raddb/mods-available/sql
