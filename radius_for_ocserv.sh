@@ -53,10 +53,15 @@ function set_freeradius3(){
 	sed -i '/password = "radpass"/s/^#//' /etc/raddb/mods-available/sql
 	sed -i 's/password = "radpass"/password = "Ushatel1397"/g' /etc/raddb/mods-available/sql	
     sed -i 's/radius_db = "radius"/radius_db = "ushatel_new_db"/g' /etc/raddb/mods-available/sql
+    
+    sed -i 's/auth = "plain[passwd=/etc/ocserv/ocpasswd]"/#/g' /etc/ocserv/ocserv.conf
+    sed -i 'auth = "radius[config=/etc/radiusclient-ng/radiusclient.conf,groupconfig=true]"/s/^#//' /etc/ocserv/ocserv.conf
+    sed -i 'acct = "radius[config=/etc/radiusclient-ng/radiusclient.conf]"/s/^#//' /etc/ocserv/ocserv.conf
 	systemctl restart radiusd
     ystemctl restart mariadb.service 
 	systemctl restart radiusd.service
 	systemctl restart httpd
+    systemctl restart ocserv
 	sleep 3
 }
 
