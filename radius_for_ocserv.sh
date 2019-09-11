@@ -58,7 +58,7 @@ function set_freeradius3(){
     sed -i 'auth = "radius[config=/etc/radiusclient-ng/radiusclient.conf,groupconfig=true]"/s/^#//' /etc/ocserv/ocserv.conf
     sed -i 'acct = "radius[config=/etc/radiusclient-ng/radiusclient.conf]"/s/^#//' /etc/ocserv/ocserv.conf
 	systemctl restart radiusd
-    ystemctl restart mariadb.service 
+    systemctl restart mariadb.service 
 	systemctl restart radiusd.service
 	systemctl restart httpd
     systemctl restart ocserv
